@@ -1,5 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 .App {
   text-align: center;
+}
+.header h2 {
+  cursor: pointer;
+  color: yellow;
+  background-color: #000;
+  width: 100%;
 }
 
 .side {

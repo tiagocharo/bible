@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import json from './json/nvi.json';
+import { Link } from "react-router-dom";
 
 class App extends Component {
 
@@ -36,16 +37,21 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <button onClick={ this.toggleMenu.bind(this) }>Livros</button>
+        <div className="header">
+          <h2 onClick={ this.toggleMenu.bind(this) }>LIVROS</h2>
+        </div>
         <div className={this.state.isMenuVisible ? 'show-menu' : 'hide-menu'}>
           { 
             this.state.isMenuVisible ?
-              this.bible.map((book, index) => <p onClick={ this.getText.bind(this, book.name) } key={index}>{book.name}</p>)
-            : <p> {
-              this.state.text ?
-                this.state.text.map((book, index) => `Capítulo${index + 1} - ${book.map((verse, index) => `${index + 1} - ${verse}` )}`)
-              : null
-            } </p>
+              this.bible.map((book, index) => 
+                <Link to={`/book/${book.name}`} onClick={this.getText.bind(this, book.name)} key={index}>{book.name}</Link>
+              )
+            : null
+            // : <p> {
+            //   this.state.text ?
+            //     this.state.text.map((book, index) => `Capítulo${index + 1} - ${book.map((verse, index) => `${index + 1} - ${verse}` )}`)
+            //   : null
+            // } </p>
           }
         </div>
       </div>
