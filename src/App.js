@@ -44,14 +44,14 @@ class App extends Component {
           { 
             this.state.isMenuVisible ?
               this.bible.map((book, index) => 
-                <Link className="books" to={`/book/${book.name}`} onClick={this.getText.bind(this, book.name)} key={index}>{book.name}</Link>
+                <Link 
+                  className="books" 
+                  to={{pathname: `/book/${book.name}`, state: {text: this.bible}}} 
+                  onClick={this.getText.bind(this, book.name)} 
+                  key={index} 
+                  data={this.bible}>{book.name}</Link>
               )
             : null
-            // : <p> {
-            //   this.state.text ?
-            //     this.state.text.map((book, index) => `Capítulo${index + 1} - ${book.map((verse, index) => `${index + 1} - ${verse}` )}`)
-            //   : null
-            // } </p>
           }
         </div>
       </div>

@@ -3,8 +3,11 @@ import React, { Component } from 'react';
 export default class Cap extends Component {
 
 	render() {
+		debugger;
 		return (
-			<p>cap</p>
+			<div>
+				<p>cap</p>
+			</div>
 		)
 	}
 }
