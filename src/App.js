@@ -44,7 +44,7 @@ class App extends Component {
           { 
             this.state.isMenuVisible ?
               this.bible.map((book, index) => 
-                <Link to={`/book/${book.name}`} onClick={this.getText.bind(this, book.name)} key={index}>{book.name}</Link>
+                <Link className="books" to={`/book/${book.name}`} onClick={this.getText.bind(this, book.name)} key={index}>{book.name}</Link>
               )
             : null
             // : <p> {
