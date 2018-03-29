@@ -26,7 +26,14 @@ export default class Book extends Component {
 				{
 					this.state.caps.map((text, index) => 
 						<Link
-							to={{pathname: `${this.props.match.params.name}/cap/${index + 1}`, state: {caps: this.state.caps}}}
+							to={
+								{
+									pathname: `${this.props.match.params.name}/cap/${index + 1}`,
+									state: {
+										caps: this.state.caps
+									}
+								}
+							}
 							key={index}
 							className="caps">{index + 1}</Link>
 					)

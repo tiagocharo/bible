@@ -11,7 +11,7 @@ export default class Routes extends Component {
 			<Router>
 				<div>
 					<Route exact path="/" component={App} />
-					<Route path="/book/:name" component={Book} />
+					<Route exact={true} path="/book/:name" component={Book} />
 					<Route path="/book/:name/cap/:number" component={Cap} />
 				</div>
 			</Router>

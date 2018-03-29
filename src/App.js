@@ -18,12 +18,6 @@ class App extends Component {
 
   }
 
-  toggleMenu() {
-    this.setState({
-      isMenuVisible: !this.state.isMenuVisible
-    })
-  }
-
   getText(bookName) {
     this.bible.forEach(book => {
       if(bookName === book.name) {
@@ -38,11 +32,10 @@ class App extends Component {
     return (
       <div className="App">
         <div className="header">
-          <h2 onClick={ this.toggleMenu.bind(this) }>LIVROS</h2>
+          <h2>BÍBLIA SAGRADA</h2>
         </div>
         <div className={this.state.isMenuVisible ? 'show-menu' : 'hide-menu'}>
           { 
-            this.state.isMenuVisible ?
               this.bible.map((book, index) => 
                 <Link 
                   className="books" 
@@ -51,7 +44,6 @@ class App extends Component {
                   key={index} 
                   data={this.bible}>{book.name}</Link>
               )
-            : null
           }
         </div>
       </div>
