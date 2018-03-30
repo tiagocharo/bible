@@ -26,9 +26,29 @@ a.caps {
   width: 45%; 
   float: left;
   text-decoration: none;
-  margin: 1%;
+  margin: 2% 1%;
   padding: 1%;
   text-align: center;
   border: 1px solid #000;
   color: #000;
+}
+.verses {
+  padding: 20% 5%;
+}
+.verses p {
+  margin-bottom: 10px;
+}
+.container-back {
+  height: 48px;
+  width: 48px;
+  position: fixed;
+  bottom: 20px;
+  left: 10px;
+}
+.back-icon {
+  position: fixed;
+  bottom: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  left: 10px;
 }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import backIcon from './image/back.png'
 
 export default class Cap extends Component {
 	
@@ -17,12 +18,29 @@ export default class Cap extends Component {
 		})
 	}
 
+	back() {
+		this.props.history.goBack();
+	}
+
 	render() {
 		return (
 			<div>
-				{
-					this.verses.map( (text, index) => <p>{`${index + 1} - ${text}`}</p>)
-				}
+				<div className="verses">
+					{
+						this.verses.map( (text, index) => 
+							<p key={index}>
+								{`${index + 1}. ${text}`}
+							</p>
+						)
+					}
+				</div>
+				<div 
+					onClick={ (event) => {this.back(event)} }
+					className="container-back">
+					<img 
+						className="back-icon" 
+						src={backIcon} />
+				</div>
 			</div>
 		)
 	}
